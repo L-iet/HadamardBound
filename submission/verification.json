@@ -79,7 +79,7 @@
     "note": "Export-based local comparison under WSL; source build was not sandboxed. NanoDa also independently replayed the exact Solution export. This is not Palomar registry verification.",
     "challengeSourceSHA256": "28e15f8b3182f4b2da7a389d76d18c635c1a9ce567f6be6aead178d75bd905f2",
     "configSHA256": "3e2e4aac24819096bfaf38075fd24b93487f72cb332f0b65d489e570ecf0e449",
-    "proofSourceManifestSHA256": "0c4c068f60629f17d07e96f6480d652782bece0e02c863eb20ba34399b09235b",
+    "proofSourceManifestSHA256": "d459c945d82cf8e33dab054b1d9f789970d1a11c3ce9dbb2ab7c3187bad55303",
     "localWrapperExit": 0,
     "comparatorLogSHA256": "13f825408bda946502c05bcf70372dfc06978feaf8869d3eb1bb9eb7ccdd4cab"
   },
@@ -90,5 +90,20 @@
     "packageInventory": "submission/mathlib-licenses.json",
     "permissivePackages": 9
   },
-  "verifiedAtUTC": "2026-11-03T06:54:00.768008+00:00"
+  "verifiedAtUTC": "2026-11-03T06:54:00.768008+00:00",
+  "sourceHashCorrection": {
+    "correctedAtUTC": "2026-11-03T07:43:44.238552+00:00",
+    "reason": "Normalize nine local Lean sources from CRLF to LF to match Git attributes and committed source bytes; update source and manifest hashes. No mathematical content changes.",
+    "files": [
+      "HadamardMultibase/Arithmetic.lean",
+      "HadamardMultibase/BakerComparisonValues.lean",
+      "HadamardMultibase/BakerDenominatorGrowth.lean",
+      "HadamardMultibase/BakerPolynomialGrowth.lean",
+      "HadamardMultibase/MatrixSpectralPerturbation.lean",
+      "HadamardMultibase/Results.lean",
+      "HadamardMultibase/SignedPermutation.lean",
+      "HadamardMultibase/SmallRationalValues.lean",
+      "HadamardMultibase/Transfer.lean"
+    ]
+  }
 }
