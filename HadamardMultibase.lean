@@ -76,3 +76,4 @@ public import HadamardMultibase.CoveringFromSeparation
 public import HadamardMultibase.NonLiouvilleSeparation
 public import HadamardMultibase.PowerMonoidRepresentation
 public import HadamardMultibase.GeneralIndependence
+public import HadamardMultibaseClassical

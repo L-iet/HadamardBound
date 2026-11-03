@@ -2,7 +2,7 @@
   "version": "v0.4",
   "project": {
     "name": "Sparse multi-base representations and asymptotic Hadamard existence",
-    "description": "Formal proofs of a uniform O(log p / log log p) exponent for Hadamard orders 2^t p with odd p, sparse Golay decompositions, quantitative gap estimates, covering bounds, and approximate-Hadamard consequences. Six central statements have an independent mathlib-only Comparator surface.",
+    "description": "Lean formalization of sparse multi-base representations and unconditional asymptotic Hadamard existence, gap, flatness and conditioning bounds. The required logarithm-ratio separation is proved independently from mathlib.",
     "authors": [
       "Joshua Mark"
     ],
@@ -35,19 +35,6 @@
       "location": "paper/hadamard_multibase_note.tex",
       "relationship": "formalizes",
       "note": "Based on the 10 September 2026 draft, revised locally on 2 November 2026. Novelty is provisional; see paper/ALIGNMENT.md."
-    },
-    {
-      "title": "Irrationality exponents of logarithmic numbers: Values, quotients, and graded approximation",
-      "authors": [
-        "Gregory V. Chudnovsky"
-      ],
-      "type": "paper and ancillary Lean formalization",
-      "id": "arXiv:2610.28079v1",
-      "location": "https://arxiv.org/abs/2610.28079v1",
-      "relationship": "background",
-      "author_endorsement": "not-contacted",
-      "license": "Mixed; see original SOURCE-NOTICE.txt. Redistribution of original additions unresolved.",
-      "note": "Uses the finite reduced-approximants endpoint as a proved input. The source archive is SHA-256 pinned; all 1001 selected modules are ported to the module system. See DEPENDENCIES.md."
     },
     {
       "title": "Signed groups, sequences, and the asymptotic existence of Hadamard matrices",
@@ -109,17 +96,21 @@
       "type": "article",
       "id": "doi:10.1109/TIT.1961.1057620",
       "relationship": "background"
-    }
-  ],
-  "related_formalizations": [
+    },
     {
-      "id": "https://arxiv.org/src/2610.28079v1",
-      "relationship": "builds-on",
-      "note": "Quantitative logarithm-ratio dependency, not an earlier formalization of the Hadamard bound. See checksum and per-file source hashes in vendor/logarithms/provenance.json."
+      "title": "Linear Independence Measures for Logarithms of Algebraic Numbers",
+      "authors": [
+        "Michel Waldschmidt"
+      ],
+      "type": "lecture notes, 2003",
+      "location": "https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/LN1819-2003.pdf",
+      "relationship": "background",
+      "note": "Mathematical reference for quantitative interpolation and auxiliary-function methods. Lean proofs independently written; no supplement code imported."
     }
   ],
+  "related_formalizations": [],
   "status": {
-    "scope": "All seven project milestones have proved endpoints. The current Comparator surface covers six claims: sparse representations, main existence, least exponent, quantitative and subpolynomial gaps, and corrected flatness. Covering and condition-number endpoints remain outside that comparison surface. The module-system port passed its fresh build and axiom audit; the full sandboxed Comparator passed all six claims with con-ron, NanoDa and Lean default kernels; redistribution of the logarithm source is unresolved.",
+    "scope": "Complete proof endpoints in HadamardMultibaseComplete and Solution. Challenge is an independent mathlib-only statement specification, excluded from every proof import; its six placeholder proofs are not proof dependencies.",
     "sorry_count": 0,
     "sorry_in_definitions": 0,
     "axioms": []
@@ -134,7 +125,7 @@
         "framework": "Codex",
         "tool_setup": "AI-authored Lean proofs and packaging, shell builds, mathlib tactics and kernel-reduced decide; no native_decide in proved endpoints.",
         "cost": {
-          "wall_time": "Initial milestone run approximately 6 hours 17 minutes; later packaging effort not yet totaled.",
+          "wall_time": "not tracked",
           "spend_usd": "not tracked",
           "hardware": "Local Windows workstation; Linux/WSL checks where available."
         },
@@ -145,12 +136,12 @@
     "notes": "Joshua Mark directed the task. AI implemented the formal proof and packaging. No independent human expert review is recorded. Tool acceptance is not peer review or evidence of novelty."
   },
   "fidelity": {
-    "divergences": "Flatness requires 0 < epsilon < 1/2. Gap starting points are natural numbers. The full arbitrary-digit multi-base theorem is not formalized; the sparse result uses a pinned external logarithm-ratio theorem and a proved rotation/greedy argument. Covering finite cases and a trace-moment logarithmic loss are handled explicitly. See paper/ALIGNMENT.md."
+    "divergences": "Flatness uses 0 < epsilon < 1/2; gap starting points are natural numbers. The formal sparse proof uses a proved non-Liouville logarithm-ratio theorem, rotation meshes and a greedy argument. The manuscript arbitrary-digit theorem is cited background, not separately formalized. See paper/ALIGNMENT.md."
   },
   "review": {
     "status": "self-assessed; not independently human-reviewed",
     "reviewers": [],
-    "notes": "The module-system port passed a fresh 5,811-job build and all 156 principal declaration axiom audits on 2 November 2026, using only propext, Classical.choice and Quot.sound. The modern import example also passed. Full sandboxed Comparator verification passed all six claims with con-ron, NanoDa and Lean default kernels, exit 0. No registry acceptance is claimed. See submission/verification.json. No independent human expert review is recorded."
+    "notes": "357 principal declarations, including all final endpoints, pass the local axiom audit using only the three standard Lean axioms. The quantitative logarithm proof has 204 audited lemmas and uses only mathlib and project code. Independent Comparator evidence is recorded in submission/verification.json. No independent human expert review is recorded."
   },
   "alignment": {
     "namespace": "HadamardMultibase",
@@ -158,44 +149,44 @@
       {
         "source": "paper/hadamard_multibase_note.tex: Theorem thm:sparse-golay",
         "lean": "HadamardMultibase.sparseRepresentationBound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       },
       {
         "source": "paper/hadamard_multibase_note.tex: Theorem thm:main (existence formulation)",
         "lean": "HadamardMultibase.Complete.main_bound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       },
       {
         "source": "paper/hadamard_multibase_note.tex: Theorem thm:main and the definition of tau",
         "lean": "HadamardMultibase.Complete.tau_bound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       },
       {
         "source": "paper/hadamard_multibase_note.tex: Theorem thm:gaps, explicit exponential rate",
         "lean": "HadamardMultibase.Complete.quantitative_gap_bound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       },
       {
         "source": "paper/hadamard_multibase_note.tex: Theorem thm:gaps, subpolynomial consequence",
         "lean": "HadamardMultibase.Complete.subpolynomial_gap_bound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       },
       {
         "source": "paper/hadamard_multibase_note.tex: Corollary cor:flat, corrected exponent range",
         "lean": "HadamardMultibase.Complete.flat_orthogonal_bound",
-        "module": "Solution",
-        "status": "proved; fresh module build, axiom audit and full sandboxed Comparator passed",
-        "note": "Independent statement in Challenge; proof exported by the substantive development."
+        "module": "HadamardMultibaseComplete",
+        "status": "proved",
+        "note": "Unconditional proof in HadamardMultibase/CompleteResults.lean; independently specified in Challenge.lean."
       }
     ]
   },

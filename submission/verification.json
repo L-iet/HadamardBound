@@ -1,61 +1,94 @@
 {
+  "status": "locally-verified-unconditional-results",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "foundationsAuditedDeclarations": 204,
+  "permittedAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targetSpecifications": 6,
+  "targetProofHoles": 0,
+  "unconditionalFinalBoundsVerified": true,
+  "independentComparisonComplete": true,
+  "registryAccepted": false,
+  "reproduce": [
+    "lake build",
+    "python scripts/check_submission.py",
+    "python scripts/audit_classical_rework.py",
+    "python scripts/audit_axioms.py",
+    "python scripts/export_comparator.py",
+    "bash scripts/verify-comparator.sh"
+  ],
+  "paper": {
+    "builder": "Tectonic 0.17.0",
+    "passed": true,
+    "texSHA256": "101264ce7712f4222597fadfe380d6700fb92b88dfd7506fa081f85875055dc4",
+    "pdfSHA256": "57e999afbd8dbea7b9ef29c07315bc30136208bf38cd67e72ebc19075e9e6710"
+  },
   "moduleBuild": {
     "passed": true,
-    "jobs": 5811,
-    "log": ".lake/palomar-module-build-7.log"
+    "jobs": 3790,
+    "log": ".lake/final-build.log"
   },
   "axiomAudit": {
-    "auditedDeclarations": 156,
+    "auditedDeclarations": 357,
     "axioms": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "auditExit": 0,
-    "modernClientExit": 0,
-    "auditSourceSHA256": "76a178f1473b916bf751743c315848ce6c41b714f039023f048dac11f2c31aa8",
-    "verifiedAtUTC": "2026-11-03T01:51:20.410549+00:00"
+    "auditSourceSHA256": "bcb1cd36c30007b16c0d8ad5b5274faa3712bacb74e0156a4a30290a81b434f9",
+    "verifiedAtUTC": "2026-11-03T06:46:18.090552+00:00"
   },
-  "comparator": {
-    "passed": true,
-    "status": "Passed: Your solution is okay!",
-    "challengeBuildJobs": 2155,
-    "solutionBuildJobs": 5809,
-    "sandbox": "bubblewrap",
-    "independentKernelsRequested": [
-      "nanoda",
-      "con-ron"
+  "foundationAudit": {
+    "foundationsChecked": true,
+    "logarithmSeparationProofComplete": true,
+    "polynomialRotationSeparationProved": true,
+    "entryPoint": "HadamardMultibaseClassical",
+    "auditedDeclarations": 204,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
     ],
-    "exportOnly": false,
-    "independentKernelsAccepted": [
-      "con-ron",
-      "nanoda"
+    "additionalProofDependencies": [],
+    "permissiveLakePackages": 9,
+    "checkedAtUTC": "2026-11-03T06:37:15.335436+00:00"
+  },
+  "metadataSchemaPassed": true,
+  "targetSpecificationPlaceholders": 6,
+  "comparison": {
+    "status": "accepted",
+    "sourceBuildSandboxed": false,
+    "registryVerificationComplete": false,
+    "challengeExportSHA256": "b8f12434c5fd67de8ad69b8ad92ddb29e59b0334bbee08c96da393d49c8246cf",
+    "solutionExportSHA256": "635a75657d3da257cd3415c3f1ea53a95d896aaf1f2887985ba293212f44ba30",
+    "theoremsCompared": 6,
+    "statementComparisonExit": 0,
+    "leanKernelExit": 0,
+    "nanodaExit": 0,
+    "kernels": [
+      "Lean default",
+      "NanoDa"
     ],
-    "conRonVerifiedDeclarations": 113566,
-    "exitCode": 0,
-    "comparedTheorems": 6,
-    "kernelsAccepted": [
-      "con-ron",
-      "nanoda",
-      "Lean default"
-    ],
-    "verifiedAtUTC": "2026-11-03T02:52:18.817624+00:00",
-    "log": ".lake/palomar-comparator.log",
-    "logSHA256": "710a49c31f9137add0c200036549c9f89ace022166b6bca4523c42eea6e5fac5"
+    "toolchain": "leanprover/lean4:v4.35.0",
+    "exportsBuiltLocally": true,
+    "checkedAtUTC": "2026-11-03T06:54:00.767991+00:00",
+    "note": "Export-based local comparison under WSL; source build was not sandboxed. NanoDa also independently replayed the exact Solution export. This is not Palomar registry verification.",
+    "challengeSourceSHA256": "28e15f8b3182f4b2da7a389d76d18c635c1a9ce567f6be6aead178d75bd905f2",
+    "configSHA256": "3e2e4aac24819096bfaf38075fd24b93487f72cb332f0b65d489e570ecf0e449",
+    "proofSourceManifestSHA256": "0c4c068f60629f17d07e96f6480d652782bece0e02c863eb20ba34399b09235b",
+    "localWrapperExit": 0,
+    "comparatorLogSHA256": "13f825408bda946502c05bcf70372dfc06978feaf8869d3eb1bb9eb7ccdd4cab"
   },
-  "paper": {
-    "builder": "Tectonic 0.17.0",
-    "passed": true,
-    "texSHA256": "8132ffb696d86d44ec6f51dec2407d9b47824a139c7a545b70b12c44b77717e4",
-    "pdfSHA256": "07f1bb47d50ca05fd1059b41705be213c965ec86ee4fa4479eb91f9e880d7cce"
+  "sourceProvenance": {
+    "manifest": "submission/proof-sources.json",
+    "projectModules": 118,
+    "additionalProofCodeDependencies": [],
+    "packageInventory": "submission/mathlib-licenses.json",
+    "permissivePackages": 9
   },
-  "sourcePreflight": {
-    "leanFiles": 1089,
-    "projectLeanFiles": 88,
-    "dependencyModules": 1001,
-    "intentionalChallengeHoles": 6,
-    "proofHoles": 0,
-    "customAxioms": 0
-  },
-  "publicationReady": false
+  "verifiedAtUTC": "2026-11-03T06:54:00.768008+00:00"
 }

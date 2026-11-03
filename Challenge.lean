@@ -4,22 +4,13 @@ public import Mathlib.LinearAlgebra.Matrix.HadamardMatrix
 public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-/-!+# Independent statement surface
+/-!
+# Target statements
 
-For all sufficiently large odd natural numbers p, there is a real Hadamard
-matrix of order 2^t*p with t <= C*log(p)/log(log(p)), for one absolute C > 0.
-The parameter p ranges over all odd integers, not only primes. The five further
-claims record the least exponent, distinct sparse Golay-length representations,
-quantitative and subpolynomial gaps, and flat orthogonal matrices.
-
-This file imports only mathlib. Its six deliberate statement holes belong to
-the challenge, not the proof development. Solution.lean does not import it.
-Comparator checks the same named declarations and their reached definitions
-against the independently compiled proof environment.
-
-The covering and condition-number results are proved in the development but
-are not among this first submission's compared declarations. See
-paper/ALIGNMENT.md for the scope, proof route and manuscript corrections.
+Six independent specifications for the final results, with intentional proof
+placeholders. This file imports only mathlib and is excluded from the default
+build and every proof entry point. Solution supplies the completed proofs.
+See paper/ALIGNMENT.md for the intended mathematical correspondence.
 -/
 
 @[expose] public section

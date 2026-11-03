@@ -8,5 +8,3 @@
 *.tex text eol=lf
 *.md text eol=lf
 *.pdf binary
-vendor/logarithms/SOURCE-NOTICE.txt -text
-vendor/logarithms/LICENSE-OAI-APACHE-2.0.txt -text

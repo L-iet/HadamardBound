@@ -1,0 +1,26 @@
+module
+
+public import HadamardMultibase.ClassicalLogarithmForms
+public import HadamardMultibase.ElementaryLogarithmBounds
+public import HadamardMultibase.BakerPolynomials
+public import HadamardMultibase.BakerDenominators
+public import HadamardMultibase.BakerDenominatorGrowth
+public import HadamardMultibase.BakerPolynomialGrowth
+public import HadamardMultibase.BakerDerivativeGrowth
+public import HadamardMultibase.BakerComparisonValues
+public import HadamardMultibase.ExponentialPolynomialZeros
+public import HadamardMultibase.BoundedIntegerKernel
+public import HadamardMultibase.SmallRationalValues
+public import HadamardMultibase.RationalAuxiliaryKernel
+public import HadamardMultibase.BakerAuxiliaryNonvanishing
+public import HadamardMultibase.BakerAuxiliaryGrowth
+public import HadamardMultibase.BakerComparisonGrowth
+
+public import HadamardMultibase.LogarithmSeparation
+
+/-!
+# Mathlib-only foundations for the classical proof rework
+
+This entry point develops the polynomial two-logarithm estimate from Mathlib.
+The finite irrationality measure and polynomial separation for irrational logarithm ratios are proved.
+-/

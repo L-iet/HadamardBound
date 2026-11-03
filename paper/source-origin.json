@@ -6,10 +6,10 @@
   "changes": [
     "Restrict flatness exponent to (0,1/2)",
     "Use nonnegative integral gap starting points",
-    "Add formal proof route, comparison scope and dependency citation",
     "Credit Joshua Mark and supplied ORCID",
     "Permit builds without optional microtype package",
-    "Clarify nonnegative digit sets and the representability condition for the 0/1 specialization"
+    "Clarify nonnegative digit sets and the representability condition for the 0/1 specialization",
+    "Describe completed unconditional proofs, the independent logarithm-ratio route and mathlib-only code dependencies"
   ],
   "outerFileModified": false
 }

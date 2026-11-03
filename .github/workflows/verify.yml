@@ -1,4 +1,4 @@
-name: Build and independent proof comparison
+name: Build and audit unconditional proofs
 
 on:
   push:
@@ -11,41 +11,35 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 180
+    timeout-minutes: 90
     env:
       LEAN_NUM_THREADS: '2'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - name: Prepare or verify the pinned proof dependency
-        run: |
-          if [ -f vendor/logarithms/provenance.json ]; then
-            python3 scripts/prepare_logarithms.py --verify
-          else
-            python3 scripts/prepare_logarithms.py
-          fi
-      - name: Check submitted source structure
+      - name: Check proof-source structure
         run: |
           python3 scripts/test_submission_checks.py
           python3 scripts/check_submission.py
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Build proof development
+        run: lake build
+      - name: Verify pinned permissive licences
+        run: python3 scripts/audit_mathlib_licenses.py
+      - name: Audit proof axioms and foundations
+        run: |
+          python3 scripts/audit_classical_rework.py
+          python3 scripts/audit_axioms.py
       - name: Validate metadata against the pinned schema
         run: |
           python3 -m pip install -r scripts/requirements-submission.txt
           python3 scripts/validate_metadata.py
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
-        with:
-          build: false
-      - name: Build separate statement and proof environments
-        run: lake --rehash build Challenge Solution
-      - name: Audit principal theorem axioms
-        run: python3 scripts/audit_axioms.py
-      - name: Install sandbox support on the disposable Linux runner
+      - name: Export and compare the independent statements and proofs
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y bubblewrap
-          if [ -e /proc/sys/kernel/apparmor_restrict_unprivileged_userns ]; then
-            sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-          fi
-      - name: Compare with Lean, NanoDa and con-ron
-        run: bash scripts/verify-comparator.sh
+          python3 scripts/export_comparator.py
+          bash scripts/verify-comparator.sh
+      - name: Check local submission readiness
+        run: python3 scripts/check_submission.py --ready

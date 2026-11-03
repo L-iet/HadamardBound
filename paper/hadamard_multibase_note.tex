@@ -528,53 +528,35 @@ This manuscript is a research draft intended for mathematical verification and p
 
 
 \section*{Formalization scope and proof alignment}
-The accompanying Lean project is self-contained in this repository. Its
-statement surface is \texttt{Challenge.lean}, which imports only mathlib;
-\texttt{Solution.lean} imports the separate proved development. The challenge
-has six intentional proof holes for independent comparison. No proved
-endpoint imports those holes. The comparison advertises the sparse bound,
-the main existence and least-exponent bounds, quantitative and subpolynomial
-gaps, and the corrected flat-orthogonal estimate. The covering and
-condition-number results are also proved in the development but are not part
-of this first six-declaration Comparator surface.
+The accompanying Lean project proves the final unconditional sparse
+representation, Hadamard existence, least-exponent, gap, flatness and
+conditioning results using mathlib and project-owned sources. The proof
+imports contain no holes or additional axioms. Its 357 principal-declaration
+axiom audit, including 204 quantitative logarithm lemmas, uses only
+Lean's three standard axioms.
 
-The formal proof of the sparse bound does not import the full multi-base
-Hamming-weight theorem stated above. Instead it uses the Lean supplement to
-Chudnovsky~\cite{Chudnovsky2026}: for independent positive rational bases,
-the set of reduced rational approximants to their logarithm ratio with
-exponent greater than three is finite. Only this finite-approximants endpoint
-is used; a bound stated solely using a real-valued supremum would be
-insufficient without controlling an unbounded spectrum. Together with
-irrationality of $\log 10/\log 2$, this yields a uniform polynomial
-Diophantine separation. A one-sided rotation mesh gives a power-product
-below each sufficiently large integer with a logarithmically small relative
-remainder. Greedy subtraction, distinctness and finite-case absorption then
-prove Theorem~\ref{thm:sparse-golay}. The general covering lower bound uses
-the same route on an independent pair of generators containing $2$.
+The formal sparse argument proves that an irrational ratio of logarithms of
+natural integers at least two is not Liouville. Integer auxiliary coefficients,
+block binomial polynomials, controlled denominators, stable complex
+interpolation and twenty finite extrapolation stages establish the separation
+input; rotation meshes and a greedy argument then give sparse representations.
+This route avoids separately formalizing the arbitrary-digit theorem cited
+as background in the manuscript. All additional proof code is independently
+written from mathlib.
 
-The construction proof checks binary Golay seeds of lengths $1,2,10,26$,
-Turyn multiplication, and the exact Craigen consequence with order
-$4^{r+1}(2L+1)$. It does not claim to formalize every abstract signed-group
-statement of Craigen's paper. Natural-number gap predicates quantify over
-nonnegative integral starting points. The flatness corollary has been
-corrected to $0<\varepsilon<1/2$; its earlier unrestricted positive range
-was false. The covering proof handles finite initial integers separately.
-The approximate-Hadamard proof uses a proved trace-moment concentration
-bound with logarithmic loss, sufficient for every strict exponent below
-$1/4$, rather than importing a general random-matrix theorem.
+The file \texttt{Challenge.lean} independently specifies six statements using
+only mathlib. Its intentional placeholder proofs are excluded from every
+proof import. The completed proofs are exported by \texttt{Solution.lean};
+local comparison and verification evidence is recorded in
+\path{submission/verification.json}. Local checking is not registry
+acceptance, independent human review, or a determination of novelty.
 
-The manuscript's full general multi-base theorem and its worst-case
-Hamming-weight lower bound are cited background, not separately formalized
-claims. The asserted original contribution is the Hadamard deduction and its
-consequences; novelty and informal-to-formal fidelity still require expert
-review. Qualitative subpolynomial Hadamard gaps were already reported in
-connection with W.~D.~Smith's unpublished work, as noted above.
-
-The logarithm dependency is pinned to arXiv:2610.28079v1 by archive checksum.
-Its original notices, the compatibility changes and the module-system port
-are recorded separately. Kernel checking does not establish authorship,
-novelty or redistribution permission. See \texttt{DEPENDENCIES.md} and
-\texttt{paper/ALIGNMENT.md} for the detailed provenance and known limitations.
+The construction checks binary Golay seeds of lengths $1,2,10,26$, Turyn
+multiplication, and the Craigen consequence with order $4^{r+1}(2L+1)$.
+Gap predicates use natural starting points, and flatness requires
+$0<\varepsilon<1/2$. Mathematical citations are background references rather
+than imported proof code. See \texttt{DEPENDENCIES.md} and
+\path{paper/ALIGNMENT.md} for precise scope.
 
 \begin{thebibliography}{99}
 
@@ -588,11 +570,6 @@ R. P. Brent, J.-A. H. Osborn, and W. D. Smith,
 \emph{Lower bounds on maximal determinants of $\{\pm1\}$ matrices via the probabilistic method},
 arXiv:1211.3248v3, 2013.
 
-
-\bibitem{Chudnovsky2026}
-G. V. Chudnovsky,
-\emph{Irrationality exponents of logarithmic numbers: Values, quotients, and graded approximation},
-arXiv:2610.28079v1, 20 October 2026, with ancillary Lean source.
 
 \bibitem{Craigen1995}
 R. Craigen,

@@ -11,23 +11,13 @@ rev = "v4.35.0"
 name = "HadamardMultibase"
 
 [[lean_lib]]
-name = "OAI"
-srcDir = "vendor/logarithms"
-moreLeanArgs = ["-j2"]
-
-[[lean_lib]]
-name = "QuadraticPi"
-srcDir = "vendor/logarithms"
-moreLeanArgs = ["-j2"]
-
-[[lean_lib]]
-name = "integration"
-
-[[lean_lib]]
-name = "HadamardMultibaseComplete"
+name = "HadamardMultibaseClassical"
 
 [[lean_lib]]
 name = "Challenge"
+
+[[lean_lib]]
+name = "HadamardMultibaseComplete"
 
 [[lean_lib]]
 name = "Solution"

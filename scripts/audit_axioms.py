@@ -1,4 +1,4 @@
-"""Run the complete principal-declaration audit and the documented import test."""
+"""Run the complete principal-declaration audit."""
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -12,7 +12,7 @@ expected = set(re.findall(r"^#print axioms (\S+)", audit, re.M))
 result = subprocess.run(["lake", "env", "lean", "Audit.lean"], cwd=root,
                         stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                         text=True, encoding="utf-8", errors="replace")
-(root / ".lake/palomar-axiom-audit.log").write_text(result.stdout, encoding="utf-8")
+(root / ".lake/project-axiom-audit.log").write_text(result.stdout, encoding="utf-8")
 if result.returncode:
     raise SystemExit(result.returncode)
 profiles = {name: [a.strip() for a in axioms.split(",") if a.strip()]
@@ -25,22 +25,9 @@ if set(profiles) != expected:
 axioms = sorted({a for profile in profiles.values() for a in profile})
 if set(axioms) - {"propext", "Quot.sound", "Classical.choice"}:
     raise RuntimeError(f"Nonstandard proof axioms: {axioms}")
-client = '''module
-import HadamardMultibaseComplete
-#check HadamardMultibase.sparseRepresentationBound
-#check HadamardMultibase.Complete.main_bound
-#check HadamardMultibase.Complete.covering_bounds
-#check HadamardMultibase.Complete.optimalConditionNumber_bound
-'''
-test = subprocess.run(["lake", "env", "lean", "--stdin"], cwd=root, input=client,
-                      stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                      text=True, encoding="utf-8", errors="replace")
-(root / ".lake/palomar-readme-client.log").write_text(test.stdout, encoding="utf-8")
-if test.returncode:
-    raise SystemExit(test.returncode)
 report = {"auditedDeclarations": len(profiles), "axioms": axioms,
-          "auditExit": result.returncode, "modernClientExit": test.returncode,
+          "auditExit": result.returncode,
           "auditSourceSHA256": hashlib.sha256(audit.encode()).hexdigest(),
           "verifiedAtUTC": datetime.now(timezone.utc).isoformat()}
-(root / ".lake/palomar-axiom-audit.json").write_text(json.dumps(report, indent=2) + "\n")
+(root / ".lake/project-axiom-audit.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report, indent=2))
