@@ -1,0 +1,14 @@
+.lake/
+.proof-tools/
+*.log
+sources/
+# Local reconstructed proof source: redistribution terms are not yet cleared.
+/vendor/logarithms/
+__pycache__/
+*.pyc
+paper/*.aux
+paper/*.out
+paper/*.toc
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz

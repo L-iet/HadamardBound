@@ -1,0 +1,170 @@
+[
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ProjectiveLaurentVertex.lean",
+    "old": "  simp [groupAlgebraToLaurent, fullExponentEquiv]\n  rfl",
+    "new": "  simp [groupAlgebraToLaurent, fullExponentEquiv] <;> rfl",
+    "reason": "Published abbreviation bodies let simp close the goal; retain reflexivity only for remaining goals."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ProjectiveLaurentVertex.lean",
+    "old": "    simp [groupAlgebraToLaurent, fullExponentEquiv]\n    rfl",
+    "new": "    simp [groupAlgebraToLaurent, fullExponentEquiv] <;> rfl",
+    "reason": "Published abbreviation bodies let simp close the goal; retain reflexivity only for remaining goals."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/FiniteCoverCohomology.lean",
+    "old": "public import Mathlib.Tactic\n",
+    "new": "public import Mathlib.Tactic\npublic import Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono\npublic import Mathlib.Algebra.FiveLemma\n",
+    "reason": "Make the legacy transitive imports for mono_of_injective and the additive five lemma explicit."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/IdealModule.lean",
+    "old": "public import Mathlib.Algebra.Category.Grp.EpiMono\n",
+    "new": "public import Mathlib.Algebra.Category.Grp.EpiMono\npublic import Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono\n",
+    "reason": "Expose the presheaf monomorphism criterion previously visible through legacy transitive imports."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/IntegralLineSections.lean",
+    "old": "public import Mathlib.AlgebraicGeometry.FunctionField\n",
+    "new": "public import Mathlib.AlgebraicGeometry.FunctionField\npublic import Mathlib.Algebra.Category.ModuleCat.Presheaf.EpiMono\n",
+    "reason": "Expose the presheaf monomorphism criterion previously visible through legacy transitive imports."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Jets/CommutingTaylor.lean",
+    "old": "public import Mathlib.RingTheory.Derivation.Basic\n",
+    "new": "public import Mathlib.RingTheory.Derivation.Basic\npublic import Mathlib.Algebra.Module.Rat\n",
+    "reason": "Make an API previously visible through legacy transitive imports explicit in the modern module."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/ConePrimeProperties.lean",
+    "old": "public import Mathlib.RingTheory.GradedAlgebra.Radical\n",
+    "new": "public import Mathlib.RingTheory.GradedAlgebra.Radical\npublic import Mathlib.RingTheory.Ideal.KrullsHeightTheorem\n",
+    "reason": "Make an API previously visible through legacy transitive imports explicit in the modern module."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/GlobalSectionClearing.lean",
+    "old": "public import Mathlib.AlgebraicGeometry.Modules.Tilde\n",
+    "new": "public import Mathlib.AlgebraicGeometry.Modules.Tilde\npublic import Mathlib.Algebra.Module.LocalizedModule.Away\n",
+    "reason": "Make an API previously visible through legacy transitive imports explicit in the modern module."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/FiniteCoverCohomology.lean",
+    "old": "public import Mathlib.Tactic\n",
+    "new": "public import Mathlib.Tactic\npublic import Mathlib.Algebra.GroupWithZero.Action.Regular\npublic import Mathlib.Algebra.Module.LocalizedModule.Away\npublic import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.FunctorCategory\n",
+    "reason": "Restore explicit regularity, away-localization and exact-functor-category APIs formerly visible through legacy imports."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/ProjectiveCoordinateFiniteSections.lean",
+    "old": "schemeFreeOpen",
+    "new": "coordinateFiniteSchemeFreeOpen",
+    "expectedOccurrences": 3,
+    "reason": "Give the formerly private support abbreviation a distinct public name, avoiding a collision with an imported abbreviation."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/ClosedPushforwardCoherent.lean",
+    "old": "public import Mathlib.Algebra.Category.Grp.Zero\n",
+    "new": "public import Mathlib.Algebra.Category.Grp.Zero\npublic import Mathlib.Topology.Sheaves.LocallySurjective\n",
+    "reason": "Make the sheaf local-surjectivity API formerly available through legacy imports explicit."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ProjectiveFramedCech.lean",
+    "old": "schemeFreeOpen",
+    "new": "framedCechSchemeFreeOpen",
+    "expectedOccurrences": 6,
+    "reason": "Avoid a public-name collision after exposing this formerly private support abbreviation."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/GeneratorsSectionCover.lean",
+    "old": "public import OAI.NumberTheory.PiExponent.Ampleness.AmpleAllPowersGeneration\n",
+    "new": "public import OAI.NumberTheory.PiExponent.Ampleness.AmpleAllPowersGeneration\npublic import Mathlib.Topology.Sheaves.LocallySurjective\n",
+    "reason": "Expose the sheaf local-surjectivity API previously visible through legacy transitive imports."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalRepresentedOpaque.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "exceptionalRepresentedOpaqueSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 4,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalTypedTransport.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "exceptionalTypedTransportSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 3,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/PushforwardOpenSections.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "pushforwardOpenSectionsSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 7,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Approximation/PushforwardSectionComparison.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "pushforwardSectionComparisonSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 4,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/PencilCohomologyCech.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "pencilCohomologyCechSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 14,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/PencilCohomologySections.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "pencilCohomologySectionsSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 2,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ReesSheafCechBase.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "reesSheafCechBaseSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 7,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ReesSheafCechNaturality.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "reesSheafCechNaturalitySchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 3,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/ReesSheafCechRecovery.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "reesSheafCechRecoverySchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 5,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/ProjectiveCoordinateScalars.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "projectiveCoordinateScalarsSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 7,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/ProjectiveNegativeScalars.lean",
+    "old": "\\bschemeFreeOpen\\b",
+    "new": "projectiveNegativeScalarsSchemeFreeOpen",
+    "regex": true,
+    "expectedOccurrences": 5,
+    "reason": "Give a formerly private support abbreviation in a not-yet-ported module a module-specific public name, preventing namespace collisions. Only exact identifier tokens are renamed."
+  }
+]

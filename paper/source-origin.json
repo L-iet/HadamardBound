@@ -1,0 +1,15 @@
+{
+  "originalFilename": "hadamard_multibase_note.tex",
+  "originalSHA256": "93b4db9d1a8122300e6bb69f74da07057ec44f3c47212a86112156a680924535",
+  "originalDraftDate": "2026-09-10",
+  "alignedRevisionDate": "2026-11-02",
+  "changes": [
+    "Restrict flatness exponent to (0,1/2)",
+    "Use nonnegative integral gap starting points",
+    "Add formal proof route, comparison scope and dependency citation",
+    "Credit Joshua Mark and supplied ORCID",
+    "Permit builds without optional microtype package",
+    "Clarify nonnegative digit sets and the representability condition for the 0/1 specialization"
+  ],
+  "outerFileModified": false
+}

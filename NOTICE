@@ -1,0 +1,14 @@
+Hadamard multi-base formalization
+Copyright 2026 Joshua Mark
+
+Own project contributions are provided under the Apache License, Version 2.0.
+AI assistance and the limits of human review are disclosed in formalization.yaml.
+
+Third-party sources retain their own terms. In particular, the locally prepared
+vendor/logarithms tree contains source from arXiv:2610.28079v1, including OAI
+upstream portions under Apache-2.0 and author additions without an elected
+blanket software licence. The root LICENSE does not grant additional rights
+in those sources. See DEPENDENCIES.md and the original vendor notices.
+
+No affiliation with, endorsement by, or acceptance from Lax, Palomar, mathlib,
+the Lean FRO, OpenAI, or cited authors is asserted.

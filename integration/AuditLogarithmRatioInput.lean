@@ -1,0 +1,11 @@
+module
+
+public import integration.LogarithmRatioInput
+
+@[expose] public section
+
+#print axioms HadamardMultibase.not_liouville_of_finite_good
+#print axioms HadamardMultibase.not_liouville_log_ratio_of_irrational
+#print axioms HadamardMultibase.not_liouville_log_ten_div_log_two
+#print axioms HadamardMultibase.sparseRepresentationBound
+#print axioms HadamardMultibase.IndependentBases.log_ratio_separation

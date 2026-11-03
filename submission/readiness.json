@@ -1,0 +1,29 @@
+{
+  "gates": [
+    {
+      "id": "module-build",
+      "passed": true,
+      "description": "Fresh build of the module-system port and independent Challenge/Solution"
+    },
+    {
+      "id": "axiom-audit",
+      "passed": true,
+      "description": "Fresh combined axiom audit after the module-system port"
+    },
+    {
+      "id": "comparator",
+      "passed": true,
+      "description": "Comparator with the bundled NanoDa and con-ron kernels"
+    },
+    {
+      "id": "redistribution",
+      "passed": false,
+      "description": "Clear permission/licensing for original additions in the logarithm supplement"
+    },
+    {
+      "id": "public-snapshot",
+      "passed": false,
+      "description": "Public repository rooted at lean/, with a final immutable commit and reproducible dependency sources"
+    }
+  ]
+}

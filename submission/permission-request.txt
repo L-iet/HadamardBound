@@ -1,0 +1,29 @@
+Draft only — not sent.
+
+Subject: Redistribution licence for the Lean supplement to arXiv:2610.28079v1
+
+Dear Professor Chudnovsky,
+
+I am preparing a Lean formalization of an asymptotic Hadamard-existence bound.
+It uses rationalLogRatio_finite_good from your Lean supplement to
+arXiv:2610.28079v1, together with ExponentConverse, as proved inputs.
+
+The selected import closure contains 1,001 Lean modules. I have retained your
+SOURCE-NOTICE.txt and the upstream Apache notice, recorded the original archive
+checksum, and recorded compatibility and module-system port changes separately.
+The archive SHA-256 is:
+2b37bfa6f04a1316eead45f1b6ba2ad660eef6a02f00b31476d603a7e55de69e
+
+Your notice elects no new blanket software licence for original additions, so
+I have not published this source tree pending clarification.
+Would you be willing to license your original additions under Apache-2.0 or
+another stated licence permitting redistribution and modification, or identify
+an existing public repository/release with those permissions?
+
+I would preserve attribution and upstream terms, document all changes, and
+make no claim that your endorsement of the Hadamard result follows from using
+the supplement. I can provide the exact selected-file manifest and port patches.
+
+Thank you,
+Joshua Mark
+ORCID: https://orcid.org/0009-0003-5905-2382

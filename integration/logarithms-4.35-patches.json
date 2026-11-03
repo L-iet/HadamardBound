@@ -1,0 +1,225 @@
+[
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CurveLocalOrder.lean",
+    "reason": "Lean/mathlib 4.35 bundles the monotonicity argument of AddValuation.map in an ordered additive homomorphism.",
+    "old": "  (IsDiscreteValuationRing.addVal A).map enatToIntegerOrder\n    enatToIntegerOrder_top enatToIntegerOrder_monotone",
+    "new": "  AddValuation.map\n    { toAddMonoidHom := enatToIntegerOrder\n      monotone' := enatToIntegerOrder_monotone }\n    enatToIntegerOrder_top (IsDiscreteValuationRing.addVal A)"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/FiniteFreeResolutionExt.lean",
+    "reason": "Simplification in 4.35 closes a zero-map goal before the following reflexivity tactic.",
+    "old": "        ShortComplex.quasiIso_iff_of_zeros' _ (by simp; rfl) (by simp; rfl)\n          (by simp; rfl)]",
+    "new": "        ShortComplex.quasiIso_iff_of_zeros' _ (by simp <;> rfl) (by simp <;> rfl)\n          (by simp <;> rfl)]"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CartierSequence.lean",
+    "reason": "Make singleton notation explicit to disambiguate the 4.35 set-builder parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))))"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CartierSequence.lean",
+    "reason": "Disambiguate the same singleton in the local exactness helper.",
+    "old": "Ideal.span {U.1.topIso.hom\n        (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n        (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))))"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/AmpleCurveDegreePositive.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ e.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ e.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/CartierEulerDifference.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ e'.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ e'.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Cohomology/CartierMixedEuler.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map\n            (mixedCartierPowerMultiply L M s n) ≫ e'.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map\n            (mixedCartierPowerMultiply L M s n) ≫ e'.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CartierDegreeLength.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CurveDegreeAdditivity.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ e.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ e.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CurveDegreeAdditivity.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ e.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (f.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ e.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CurveSectionDegree.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ d.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map s ≫ d.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/GeneralCartierDegreeLength.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map φ ≫ d.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/SectionCartierPower.lean",
+    "reason": "Disambiguate multiline singleton notation for the Lean 4.35 parser.",
+    "old": "Ideal.span {U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map\n            (cartierPowerMultiply L s n) ≫ e'.hom))}",
+    "new": "Ideal.span (Set.singleton (U.1.topIso.hom\n          (endValue (e.inv ≫ (Scheme.Modules.restrictFunctor U.1.ι).map\n            (cartierPowerMultiply L s n) ≫ e'.hom))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalCurveDegree.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {affineMapCoefficient V a (f' y)\n      ((lineTensorInverseIso J).inv ≫ tensorInclusion J J.inverse ι)}",
+    "new": "Ideal.span (Set.singleton (affineMapCoefficient V a (f' y)\n      ((lineTensorInverseIso J).inv ≫ tensorInclusion J J.inverse ι)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalCurveDegree.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {endValue ((InverseFrames.pairingFrame (lineTensorInverseIso L) e).inv ≫\n    InverseFrames.dualMap (lineTensorInverseIso L) s)}",
+    "new": "Ideal.span (Set.singleton (endValue ((InverseFrames.pairingFrame (lineTensorInverseIso L) e).inv ≫\n    InverseFrames.dualMap (lineTensorInverseIso L) s)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/SectionZeroStalk.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {(X.presheaf.germ U.1 _ hy)\n        (U.1.topIso.hom (coefficient e (restrictSection U.1.ι s)))}",
+    "new": "Ideal.span (Set.singleton ((X.presheaf.germ U.1 _ hy)\n        (U.1.topIso.hom (coefficient e (restrictSection U.1.ι s)))))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Jets/DVRBranchJet.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {\n        MvPolynomial.aeval (Fin.cases y x) (polynomialFrameWord m word p)}",
+    "new": "Ideal.span (Set.singleton (\n        MvPolynomial.aeval (Fin.cases y x) (polynomialFrameWord m word p)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Jets/OrdinaryDVRBranchJet.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {\n        MvPolynomial.aeval x (OrdinaryDerivatives.word n word p)}",
+    "new": "Ideal.span (Set.singleton (\n        MvPolynomial.aeval x (OrdinaryDerivatives.word n word p)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/IdealTensorPowers.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {affineMapCoefficient U (idealPowerFrame J U.1 e n)\n      (Scheme.Modules.restrictUnitIso U.1.ι) (idealPowerInclusion J ι n)}",
+    "new": "Ideal.span (Set.singleton (affineMapCoefficient U (idealPowerFrame J U.1 e n)\n      (Scheme.Modules.restrictUnitIso U.1.ι) (idealPowerInclusion J ι n)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/IdealTensorPowers.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {affineMapCoefficient U (tensorFrame J (J.pow n) U.1 e (idealPowerFrame J U.1 e n))\n      (Scheme.Modules.restrictUnitIso U.1.ι) (tensorInclusion J (J.pow n) ι ≫ idealPowerInclusion J ι n)}",
+    "new": "Ideal.span (Set.singleton (affineMapCoefficient U (tensorFrame J (J.pow n) U.1 e (idealPowerFrame J U.1 e n))\n      (Scheme.Modules.restrictUnitIso U.1.ι) (tensorInclusion J (J.pow n) ι ≫ idealPowerInclusion J ι n)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/IdealTensorPowers.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {affineMapCoefficient U (tensorFrame J (J.pow n) U.1 e (idealPowerFrame J U.1 e n))\n      (idealPowerFrame J U.1 e n) (tensorInclusion J (J.pow n) ι)}",
+    "new": "Ideal.span (Set.singleton (affineMapCoefficient U (tensorFrame J (J.pow n) U.1 e (idealPowerFrame J U.1 e n))\n      (idealPowerFrame J U.1 e n) (tensorInclusion J (J.pow n) ι)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "QuadraticPi/TwoLogDVRBranch.lean",
+    "reason": "Disambiguate a multiline singleton expression for Lean 4.35; the element is unchanged.",
+    "old": "Ideal.span {MvPolynomial.aeval x\n        (polynomialFrameWord r word P)}",
+    "new": "Ideal.span (Set.singleton (MvPolynomial.aeval x\n        (polynomialFrameWord r word P)))",
+    "expectedOccurrences": 1
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/LocalAlgebra/IdealTensorPowers.lean",
+    "reason": "Use explicit definitional unfolding for a rewrite after the preceding erw changes sheaf-module instances.",
+    "old": "    rw [show Ideal.span",
+    "new": "    erw [show Ideal.span"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalPowerSections.lean",
+    "reason": "Expose definitional equality of the sheaf-module instances when rewriting the mapped singleton.",
+    "old": "  rw [Ideal.map_span, Set.image_singleton] at h'",
+    "new": "  erw [Ideal.map_span, Set.image_singleton] at h'"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/SectionZeroStalk.lean",
+    "reason": "Close the remaining definitional equality between explicit singleton and set notation after rewriting.",
+    "old": "    Ideal.map_span, Set.image_singleton]\n",
+    "new": "    Ideal.map_span, Set.image_singleton]\n  rfl\n"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Polynomials/PolynomialPoleBound.lean",
+    "reason": "Use the bundled ordered additive homomorphism API for AddValuation.map.",
+    "old": "  v.map (Int.castAddHom ℝ).withTopMap rfl\n    ((show Monotone (fun z : ℤ => (z : ℝ)) from Int.cast_mono).withTop_map)",
+    "new": "  AddValuation.map\n    { toAddMonoidHom := (Int.castAddHom ℝ).withTopMap\n      monotone' := ((show Monotone (fun z : ℤ => (z : ℝ)) from Int.cast_mono).withTop_map) }\n    rfl v"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Jets/DVRBranchJet.lean",
+    "reason": "Unfold the explicit singleton when rewriting the principal quotient length.",
+    "old": "  rw [CurveLocalOrder.length_quotient_span_eq_addVal hne]",
+    "new": "  erw [CurveLocalOrder.length_quotient_span_eq_addVal hne]"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Jets/OrdinaryDVRBranchJet.lean",
+    "reason": "Unfold the explicit singleton when rewriting the principal quotient length.",
+    "old": "  rw [CurveLocalOrder.length_quotient_span_eq_addVal hne]",
+    "new": "  erw [CurveLocalOrder.length_quotient_span_eq_addVal hne]"
+  },
+  {
+    "path": "QuadraticPi/TwoLogDVRBranch.lean",
+    "reason": "Unfold the explicit singleton when rewriting the principal quotient length.",
+    "old": "  rw [CurveLocalOrder.length_quotient_span_eq_addVal hne]",
+    "new": "  erw [CurveLocalOrder.length_quotient_span_eq_addVal hne]"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/CurveContactSum.lean",
+    "reason": "Elaborate the colength comparison with full definitional unfolding of singleton and instance projections.",
+    "old": "  simpa only [Int.cast_natCast] using\n    DVRBranchJet.frameWord_colength_lower",
+    "new": "  simpa only [Int.cast_natCast] using!\n    DVRBranchJet.frameWord_colength_lower",
+    "previousNew": "  simpa only [Int.cast_natCast, Set.instSingletonSet] using\n    DVRBranchJet.frameWord_colength_lower"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/PlaceCenteredBranch.lean",
+    "reason": "Compare the singleton colength with full definitional unfolding.",
+    "old": "  simpa only [Int.cast_natCast, logContact, x] using hb",
+    "new": "  simpa only [Int.cast_natCast, logContact, x] using! hb"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Geometry/PlaceCenteredBranch.lean",
+    "reason": "Compare the singleton colength with full definitional unfolding.",
+    "old": "  simpa only [Int.cast_natCast, ordinaryContact] using\n",
+    "new": "  simpa only [Int.cast_natCast, ordinaryContact] using!\n"
+  },
+  {
+    "path": "OAI/NumberTheory/PiExponent/Ampleness/ExceptionalCurveDegree.lean",
+    "reason": "Unfold section and singleton projections when rewriting the mapped ideal.",
+    "old": "  rw [Ideal.map_span, Set.image_singleton]\n",
+    "new": "  erw [Ideal.map_span, Set.image_singleton]\n"
+  },
+  {
+    "path": "QuadraticPi/TwoLogPlaceContact.lean",
+    "reason": "Compare singleton colength expressions with full definitional unfolding.",
+    "old": "  simpa only [Int.cast_natCast, contact] using\n",
+    "new": "  simpa only [Int.cast_natCast, contact] using!\n"
+  }
+]

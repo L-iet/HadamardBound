@@ -1,0 +1,10 @@
+{
+  "template": {
+    "repository": "PalomarRegistry/PalomarTemplate",
+    "revision": "2891de4c48955af824969a263d31b25e7a9a1406"
+  },
+  "metadata": {
+    "repository": "mathlib-initiative/formalization.yaml",
+    "revision": "99c678e569c7c4c0772db297c5ddd5e4c9b6322e"
+  }
+}

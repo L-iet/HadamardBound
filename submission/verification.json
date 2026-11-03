@@ -1,0 +1,61 @@
+{
+  "moduleBuild": {
+    "passed": true,
+    "jobs": 5811,
+    "log": ".lake/palomar-module-build-7.log"
+  },
+  "axiomAudit": {
+    "auditedDeclarations": 156,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "auditExit": 0,
+    "modernClientExit": 0,
+    "auditSourceSHA256": "76a178f1473b916bf751743c315848ce6c41b714f039023f048dac11f2c31aa8",
+    "verifiedAtUTC": "2026-11-03T01:51:20.410549+00:00"
+  },
+  "comparator": {
+    "passed": true,
+    "status": "Passed: Your solution is okay!",
+    "challengeBuildJobs": 2155,
+    "solutionBuildJobs": 5809,
+    "sandbox": "bubblewrap",
+    "independentKernelsRequested": [
+      "nanoda",
+      "con-ron"
+    ],
+    "exportOnly": false,
+    "independentKernelsAccepted": [
+      "con-ron",
+      "nanoda"
+    ],
+    "conRonVerifiedDeclarations": 113566,
+    "exitCode": 0,
+    "comparedTheorems": 6,
+    "kernelsAccepted": [
+      "con-ron",
+      "nanoda",
+      "Lean default"
+    ],
+    "verifiedAtUTC": "2026-11-03T02:52:18.817624+00:00",
+    "log": ".lake/palomar-comparator.log",
+    "logSHA256": "710a49c31f9137add0c200036549c9f89ace022166b6bca4523c42eea6e5fac5"
+  },
+  "paper": {
+    "builder": "Tectonic 0.17.0",
+    "passed": true,
+    "texSHA256": "8132ffb696d86d44ec6f51dec2407d9b47824a139c7a545b70b12c44b77717e4",
+    "pdfSHA256": "07f1bb47d50ca05fd1059b41705be213c965ec86ee4fa4479eb91f9e880d7cce"
+  },
+  "sourcePreflight": {
+    "leanFiles": 1089,
+    "projectLeanFiles": 88,
+    "dependencyModules": 1001,
+    "intentionalChallengeHoles": 6,
+    "proofHoles": 0,
+    "customAxioms": 0
+  },
+  "publicationReady": false
+}
